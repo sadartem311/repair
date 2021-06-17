@@ -262,7 +262,7 @@
                          <li class="interview-list__item">
                              <span class="interview-list__counter">3</span>
                              <!-- /.interview-list__counter -->
-                             <span class="interview-list__text">Где находится помещение, в котором будет производиться ремонт?</span>
+                             <span class="interview-list__text">Где находится помещение, в котором будет производиться ремонт?</span>
                              <!-- /.interview-list__text -->
                         </li>
                          <!-- /.interview-list__item -->
@@ -280,11 +280,13 @@
                  <div class="form brif__form">
                      <h3 class="form__title">Оставьте заявку на бесплатный расчет ремонта по телефону</h3>
                      <span class="form__subtitle">Для этого заполните форму ниже</span>
-                     <input type="text" class="input brif__input" placeholder="Ваше имя">
-                     <input type="tel" class="input brif__input" placeholder="Ваш телефон">
-                     <button class="button brif__button">Узнать стоймость</button>
-                     <span class="form__description">Мы перезвоним Вам в течение 60 секунд</span>
-                     <!-- /.button brif__button -->
+                     <form action="#" id="brif-form">
+                        <input type="text" name="username" required class="input brif__input" placeholder="Ваше имя">
+                        <input type="tel" class="input brif__input" placeholder="Ваш телефон">
+                        <button class="button brif__button">Узнать стоймость</button>
+                        <span class="form__description">Мы перезвоним Вам в течение 60 секунд</span>
+                        <!-- /.button brif__button -->
+                    </form>
                  </div>
                  <!-- /.form brif__form -->
              </div>
@@ -301,21 +303,27 @@
     <script src="./src/js/slick.min.js"></script>
     <script src="./src/js/script.js"></script>
     <script src="/src/js/wow.min.js"></script>
+    <script src="/src/js/jquery.validate.min.js"></script>
 
     <script>
     // Инициализация WOW.JS
         new WOW().init();
     // Скрипт слайдера
         $(document).ready(function() {
-        let button = $('#button');
-        let modal = $('#modal');
-        let close = $('#close');
-        button.on('click', function() {
-            modal.addClass('modal_active');
+        // Валидация формы
+        $('#brif-form').validate({
+            
         })
-        close.on('click', function() {
-            modal.removeClass('modal_active');
-        })
+        // Скрипт слайдера
+            let button = $('#button');
+            let modal = $('#modal');
+            let close = $('#close');
+            button.on('click', function() {
+                modal.addClass('modal_active');
+            })
+            close.on('click', function() {
+                modal.removeClass('modal_active');
+            })
 });
     </script>
 </body>
